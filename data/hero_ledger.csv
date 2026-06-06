@@ -1,0 +1,21 @@
+Hero_ID,Z,X,Y,Narrative_Context
+1,1,0,1,Kryptonian / Flight
+2,1,0,1,Amazonian Demi-God
+3,1,0,1,Atlantean Royalty
+4,1,0,1,Cosmic Sorcerer
+5,1,0,1,Speedster
+6,1,0,1,Alien Mutant
+7,1,1,1,Thunder God / Armor trial
+8,1,1,1,Energy Manipulator
+9,0,0,1,Martial Arts Master
+10,0,0,0,Vigilante Archer
+11,0,0,0,High-Tech Detective
+12,0,0,0,Acrobat Brawler
+13,0,1,1,Armored Billionaire
+14,0,1,1,Cybernetic Spy
+15,0,1,1,Ex-Military Pilot
+16,0,1,1,Street Thief
+17,0,1,0,Bounty Hunter
+18,0,1,0,Ninja Assassin
+19,0,1,0,Boxer Vigilante
+20,0,1,0,Masked Detective
