@@ -152,7 +152,33 @@ $$P(Y=1 \mid do(X=0)) = 0.40 + 0.15 = 0.55$$
 
 ---
 
-## 8. Final Causal Findings
+## 7.1 Hand-Solved Calculations: Authentic Workings
+
+The calculations above are verified through hand-written mathematical workings. Below are scanned images of the manual derivations, demonstrating the step-by-step causal reasoning process.
+
+### Step 1: Observational Aggregation and Confounding Detection
+
+![Step 1: Observational Association](solution-by-hand/step1.jpg)
+
+*This step isolates and counts the observational contingencies, revealing Simpson's Paradox in the raw data.*
+
+### Step 2: Confounder Stratification and Subgroup Analysis
+
+![Step 2: Subgroup Rates](solution-by-hand/step2.jpg)
+
+![Step 2.1: Confounder Base Rates](solution-by-hand/step2.1.jpg)
+
+*These calculations decompose the population by power class ($Z$) and compute conditional success rates for each subgroup. This is where confounding is quantified.*
+
+### Step 3: Backdoor Adjustment and Interventional Resolution
+
+![Step 3: Backdoor Formula Application](solution-by-hand/step3.jpg)
+
+*This final sheet applies Pearl's Backdoor Adjustment Formula, computing $P(Y=1 \mid do(X=1))$ and $P(Y=1 \mid do(X=0))$ by hand, yielding the true causal effects.*
+
+---
+
+## 9. Final Causal Findings
 
 * Observational association: $P(Y=1 \mid X=1) = 60\%$ and $P(Y=1 \mid X=0) = 70\%$.
 * Interventional ground truth: $P(Y=1 \mid do(X=1)) = 70\%$ and $P(Y=1 \mid do(X=0)) = 55\%$.
@@ -172,7 +198,7 @@ The observational data presented an illusion: suits appeared harmful, but the ca
 
 ---
 
-## 9. Verification Script
+## 10. Verification Script
 
 A clean Python verifier is included in `scripts/verifier.py`. It loads the same dataset, computes the observational fractions, and evaluates the backdoor adjustment.
 
@@ -182,7 +208,7 @@ python scripts/verifier.py
 
 ---
 
-## 10. Advanced Conceptual Note: The Descendant & Mediator Trap
+## 11. Advanced Conceptual Note: The Descendant & Mediator Trap
 
 Suppose we introduce a downstream variable $W$ representing maintenance cost after choosing the suit ($X \rightarrow W$). Should we condition on $W$ when estimating the causal effect of the suit on victory?
 
@@ -190,19 +216,26 @@ No. $W$ is a descendant/mediator of $X$. Conditioning on it would block part of 
 
 ---
 
-## 11. Repository Structure
+## 12. Repository Structure
 
 ```
 ├── README.md
+├── LICENSE
+├── .gitignore
 ├── data/
 │   └── hero_ledger.csv
-└── scripts/
-    └── verifier.py
+├── scripts/
+│   └── verifier.py
+└── solution-by-hand/
+    ├── step1.jpg
+    ├── step2.jpg
+    ├── step2.1.jpg
+    └── step3.jpg
 ```
 
 ---
 
-## 12. References
+## 13. References
 
 * Judea Pearl, *Causality: Models, Reasoning, and Inference* (2009)
 * Judea Pearl, *The Book of Why* (2018)
@@ -211,7 +244,7 @@ No. $W$ is a descendant/mediator of $X$. Conditioning on it would block part of 
 
 ---
 
-## 13. Notes for Presentation
+## 14. Notes for Presentation
 
 This artifact is designed to be portfolio-ready. It combines:
 
